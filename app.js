@@ -81,7 +81,11 @@ const getResponseText = (response) => {
         return '';
     }
 };
+app.use(express.static(path.join(__dirname)));
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
 app.post('/ask', async (req, res) => {
     const { name, email, phone, linkedin, college, degree, year, skills, projects, achievements, experience, company } = req.body;
 

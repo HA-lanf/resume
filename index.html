@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <h1>RESUME GENERATOR</h1>
+
+  <form id="form" method="POST" action="http://localhost:5000/ask">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name"><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
+
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required><br><br>
+
+    <label for="linkedin">LinkedIn:</label>
+    <input type="url" id="linkedin" name="linkedin" placeholder="Enter your LinkedIn profile URL" required><br><br>
+
+    <label for="college">College:</label>
+    <input type="text" id="college" name="college" placeholder="Enter your college name" required><br><br>
+
+    <label for="degree">Course:</label>
+    <input type="text" id="degree" name="degree" placeholder="For eg BTech in CSE" required><br><br>
+
+    <label for="year">Graduation year:</label>
+    <select id="year" name="year" required>
+      <option value="">-- Select --</option>
+      <option value="2025">2025</option>
+      <option value="2026">2026</option>
+      <option value="2027">2027</option>
+      <option value="2028">2028</option>
+      <option value="2029">2029</option>
+    </select><br><br>
+
+    <label for="skills">Skills:</label>
+    <textarea id="skills" name="skills" required placeholder="Write your skills however you like, I'll format it up"></textarea><br><br>
+
+    <label for="projects">Projects:</label>
+    <textarea id="projects" name="projects" required placeholder="Write your projects however you like, I'll format it up"></textarea><br><br>
+
+    <label for="experience">Experience:</label>
+    <textarea id="experience" name="experience" placeholder="Write your work experience however you like, I'll format it up (optional)"></textarea><br><br>
+
+    <label for="achievements">Achievements:</label>
+    <textarea id="achievements" name="achievements" placeholder="Write your achievements however you like, I'll format it up (optional)"></textarea><br><br>
+
+    <label for="company">Company and Position applying for:</label>
+    <input type="text" id="company" name="company" placeholder="For eg SDE at Google (optional)"><br><br>
+
+    <button type="submit">Download Resume</button>
+  </form>
+</body>
+</html>

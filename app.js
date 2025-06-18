@@ -3,7 +3,6 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
 const puppeteer = require('puppeteer');
-const puppeteerConfig = require('./puppeteer.config.cjs');
 const fs = require('fs/promises');
 const ejs = require('ejs');
 const { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } = require('@google/generative-ai');
@@ -222,7 +221,10 @@ const startServer = async () => {
         console.log('Launching Puppeteer browser...');
         mongoClient = await connectToMongo();
         console.log('MongoDB connected successfully.');
-        browser = await puppeteer.launch(puppeteerConfig);
+        browser = await puppeteer.launch({
+            headless: true,
+            args: ['--no-sandbox', '--disable-setuid-sandbox']
+        });
         console.log('Browser launched successfully.');
 
         app.listen(PORT, () => {

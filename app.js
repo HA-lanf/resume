@@ -82,7 +82,7 @@ const getResponseText = (response) => {
     }
 };
 
-app.post('/ask', async (req, res) => {
+app.post('/', async (req, res) => {
     const { name, email, phone, linkedin, college, degree, year, skills, projects, achievements, experience, company } = req.body;
 
     if (!name || !email || !skills) {

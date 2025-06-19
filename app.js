@@ -124,8 +124,8 @@ app.post('/ask', async (req, res) => {
 
         const prompts = {
             skills: `As a professional resume writing expert, your task is to enhance the provided skills for a software engineer's resume, specifically targeting a position at "${company || 'a company'}".
-If the provided skills are unclear, generic, or appear to be "gibberish," infer and list relevant and impactful technical and soft skills for a software engineer (e.g., Programming Languages, Frameworks, Tools, Databases, Cloud Platforms).
-Format the output as a concise, professional, **comma-separated list of 5-10 key skills**.
+If the provided skills are  appear to be "gibberish," infer and list relevant and impactful technical and soft skills for a software engineer (e.g., Programming Languages, Frameworks, Tools, Databases, Cloud Platforms).
+Format the output as a concise, professional, **comma-separated list of 5-10 key skills**. If skills are provided then doont extra skill from ur side.
 **Strictly avoid bullet points, paragraphs, conversational text, or any preamble/postamble.** Provide only the comma-separated list. Keep the total output for skills under 50 words.
 
 Skills to enhance: ${skills}`,
@@ -144,7 +144,8 @@ For each project:
 - Highlight technologies used (e.g., Python, React, AWS, SQL).
 - Emphasize outcomes, impact, or features developed.
 - Quantify results where possible.
-If the provided project details are "gibberish," vague, or insufficient, infer and create 2-3 realistic and impactful software engineering project descriptions for a software engineer. Fill in any missing details like technologies or outcomes to make them professional and complete.
+If the provided project details are "gibberish", infer and create 2-3 realistic and impactful software engineering project descriptions for a software engineer. Fill in any missing details like technologies or outcomes to make them professional and complete.
+if projects are provided then dont add extra projects from ur side.
 **Format each project as a concise Markdown bullet point, starting with the project name (e.g., '* Project Name: Description...').** Each bullet point should be professional and not a paragraph.
 **Your output will be used directly in the resume. Do not use paragraphs, conversational text, or any preamble/postamble.**
 Keep the total output for projects concise, ideally under 100 words.
